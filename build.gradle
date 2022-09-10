@@ -1,0 +1,113 @@
+plugins {
+    id 'org.springframework.boot' version '2.5.6'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+allprojects {
+    apply plugin: 'java'
+
+    group("com.example")
+    version("1.0.0")
+}
+
+//ext.profile = (!project.hasProperty('profile') || !profile) ? 'dev' : profile
+//System.setProperty("spring.profiles.active", profile)
+//println("profile: ${profile}")
+
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+bootJar {
+    enabled = true
+}
+
+jar {
+    enabled = false
+}
+
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    // jpa
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    // querydsl
+    implementation 'com.querydsl:querydsl-jpa:4.4.0'
+    // querydsl-maven-plugin
+    implementation 'com.querydsl:querydsl-maven-plugin:4.4.0'
+    // qlrm // https://github.com/72services/qlrm
+    implementation 'org.qlrm:qlrm:3.0.4'
+    // thymeleaf
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:2.5.4'
+    implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:2.4.1'
+
+    // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
+    implementation 'org.apache.commons:commons-lang3:3.12.0'
+    // JsonUtils, MultipartFile
+    implementation 'commons-io:commons-io:2.11.0'
+    // Java 8 date/time type `java.time.LocalDateTime` not supported by default...
+    // LocalDateTime 직렬화/역직렬화 해결
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.2'
+    // json 변환 라이브러리
+    implementation 'com.googlecode.json-simple:json-simple:1.1.1'
+    // main class 위치 잡아 줌
+    implementation 'org.springframework.boot:spring-boot-maven-plugin:2.6.2'
+
+    compileOnly 'org.projectlombok:lombok'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    runtimeOnly 'com.h2database:h2'
+    runtimeOnly 'org.postgresql:postgresql'     // hibernate 사용할때 postgresql 등록
+    annotationProcessor (
+            'org.projectlombok:lombok',
+            "jakarta.persistence:jakarta.persistence-api",
+            "jakarta.annotation:jakarta.annotation-api",
+            "com.querydsl:querydsl-apt:4.4.0:jpa")
+
+
+    // '/swagger-ui/' swagger url
+    implementation 'io.springfox:springfox-boot-starter:3.0.0'
+
+    // mybatis
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:1.3.2'
+    // HikariCP
+    implementation "com.zaxxer:HikariCP"
+    // postgresql jdbc driver
+    implementation "org.postgresql:postgresql:42.2.1"
+    // db Logging
+    implementation "org.bgee.log4jdbc-log4j2:log4jdbc-log4j2-jdbc4.1:1.16"
+
+    // dto conversion
+    implementation 'org.modelmapper:modelmapper:3.1.0'
+
+    // autuator
+    implementation 'org.springframework.boot:spring-boot-starter-actuator:2.6.4'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    // mockito
+    testImplementation group: 'org.mockito', name: 'mockito-core', version: '3.12.4'
+    testImplementation group: 'org.mockito', name: 'mockito-junit-jupiter', version: '3.12.4'
+}
+
+//sourceSets {
+//    main {
+//        java {
+//            srcDirs = ["$projectDir/src/main/java", "$projectDir/build/generated"]
+//        }
+//    }
+//}
+
+test {
+    useJUnitPlatform()
+    enabled = false
+}
+
+
+

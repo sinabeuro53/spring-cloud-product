@@ -1,0 +1,211 @@
+buildscript {
+    ext {
+        spring = "org.springframework"
+        boot = "${spring}.boot"
+        bootVersion = "2.5.6"
+        lombok = "org.projectlombok:lombok"
+    }
+
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+        maven { url "https://plugins.gradle.org/m2"}
+    }
+
+    dependencies {
+        classpath "$boot:spring-boot-gradle-plugin:$bootVersion"
+        classpath "io.spring.gradle:dependency-management-plugin:1.0.6.RELEASE"
+        classpath "com.moowork.gradle:gradle-node-plugin:1.3.1"
+    }
+}
+
+plugins {
+//    id 'org.springframework.boot' version '2.5.6'
+//    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+//    id 'java'
+    id "com.github.node-gradle.node" version "3.1.0"
+}
+
+allprojects {
+    apply plugin: 'java'
+
+    group("com.example")
+    version("1.0.0")
+}
+
+
+// 스프링이 아닌 다른 모듈의 부트를 끔
+rootProject.subprojects {
+    //subprojects-> { println (subprojects.name) }
+//    if(!it.name.startsWith("backend")){
+//        it.tasks["bootJar"].enabled = false
+//    }
+}
+
+node {
+    version = '14.17.1'
+    npmVersion = '6.14.13'
+    download = true
+    distBaseUrl = 'https://nodejs.org/dist'
+    workDir = file("${rootDir}/frontend/nodejs")
+    npmWorkDir = file("${rootDir}/frontend/npm")
+    nodeModulesDir = file("${rootDir}/frontend/")       // nodeModulesDir
+
+}
+
+
+//sourceSets {
+//    main {
+////        java {
+////            srcDirs = ["${rootDir}/office_backend/src/main/java"]
+////        }
+//        resources {
+//            srcDirs = ["${rootDir}/office_backend/src/main/resources"] // , "src/main/resources"
+////            srcDir "${rootDir}/office_backend/src/main/resources"
+//        }
+////        println "java.srcDirs = ${java.srcDirs}"
+////        println "java.files = ${java.files.name}"
+////        println "allJava.files = ${allJava.files.name}"
+//        println "resources.srcDirs = ${resources.srcDirs}"
+//        println "resources.files = ${resources.files.name}"
+//        println "allSource.files = ${allSource.files.name}"
+////        println "output.classesDir = ${output.classesDir}"
+////        println "output.resourcesDir = ${output.resourcesDir}"
+////        println "output.files = ${output.files}"
+//
+//    }
+//}
+
+//ext.profile = (!project.hasProperty('profile') || !profile) ? 'dev' : profile
+System.setProperty("spring.profiles.active", profile)
+println("profile: ${profile}")
+
+
+tasks {
+//    processResources { duplicatesStrategy = org.gradle.api.file.DuplicatesStrategy.INCLUDE }
+//    출처: https://derveljunit.tistory.com/336 [Derveljun's Programming Log]
+}
+
+project(':'office_backend') {
+
+    apply plugin: 'java'
+    apply plugin: 'eclipse'
+    apply plugin: boot
+    apply plugin: "io.spring.dependency-management"
+    apply plugin: "com.github.node-gradle.node"
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven { url "https://plugins.gradle.org/m2"}
+    }
+
+//    task initSourceFolders {
+//        sourceSets*.java.srcDirs*.each {
+//            if( !it.exists() ) {
+//                it.mkdirs()
+//            }
+//        }
+//
+//        sourceSets*.resources.srcDirs*.each {
+//            if( !it.exists() ) {
+//                it.mkdirs()
+//            }
+//        }
+//    }
+
+
+    dependencies {
+        implementation('org.springframework.boot:spring-boot-starter-thymeleaf:2.5.4')
+        implementation 'com.github.node-gradle:gradle-node-plugin:3.1.0'
+        compileOnly lombok
+        annotationProcessor lombok
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+
+    task copyDistToBackendResources(type: Copy) {
+        // description
+        from("${rootDir}/frontend/dist/")
+        into("${project.projectDir}/build/resources/main/templates/")
+        includeEmptyDirs = true
+    }
+
+    bootRun {
+//        println '여기'
+        println System.properties['spring.profiles.active']
+        String activeProfile = System.properties['spring.profiles.active']
+        println "zone: $activeProfile"
+//        systemProperty "spring.profiles.active", activeProfile
+
+        dependsOn copyDistToBackendResources
+    }
+
+}
+
+project(':frontend') {
+
+    apply plugin: "com.github.node-gradle.node"
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven { url "https://plugins.gradle.org/m2"}
+    }
+
+    dependencies {
+        implementation 'com.github.node-gradle:gradle-node-plugin:3.1.0'
+    }
+
+    task nodeInstallProduction {
+        doLast {
+            nodeSetup
+            npmSetup
+        }
+    }
+
+    task webpack(type: NpmTask) {
+        args = ['run', 'build']
+    }
+
+    task copyDistToStatic(type: Copy, dependsOn: webpack) {
+        from("${rootDir}/frontend/dist/")
+        into("${rootDir}/office_backend/build/resources/main/templates/")
+        includeEmptyDirs = true
+    }
+
+    task npmInstallProduction {
+        def folder = new File( "${rootDir}/frontend/node_modules" )
+        if( !folder.exists() ) {
+            npmInstall.exec()
+            println "npm install complete. let's retry to build application"
+        }
+    }
+    processResources.dependsOn npmInstallProduction
+
+    //build.dependsOn([copyDistToStatic])
+
+}
+
+//dependencies {
+//    implementation 'org.testng:testng:7.1.0'
+//}
+
+// gradle 프로세스 순서
+    // compileJava
+    // processResources
+    // classes
+    // jar
+    // assemble
+    // compileTestJava
+    // processTestResources
+    // testClasses
+    // test
+    // check
+    // build
+
+
+
