@@ -95,8 +95,8 @@ mybatis:
 
 # https://goddaehee.tistory.com/206
 # TRACE  <  DEBUG  <  INFO  <  WARN  <  ERROR
-logging:
-  config: classpath:logback-spring.xml
+#logging:
+#  config: classpath:logback-spring.xml
 #  level:
 #    ROOT: INFO
 #    org.apache.http: DEBUG
