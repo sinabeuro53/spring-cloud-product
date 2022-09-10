@@ -1,0 +1,58 @@
+https://blog.hyunsub.kim/Spring/Spring-with-Terminal/
+
+./gradlew bootRun
+
+./gradlew build
+
+
+프로젝트를 jar 파일로 빌드하기
+./gradlew bootJar
+java -jar demo-0.0.1-SNAPSHOT.jar
+
+
+테스트하기
+./gradlew test
+
+./gradlew bootRun -Dspring-boot.run.jvmArguments='-Dserver.port=9003'
+안됨
+
+
+task 실행
+gradle tasks --group="build setup"
+
+https://docs.gradle.org/current/userguide/command_line_interface.html
+옵션을 살펴볼 것
+
+
+gradle run
+
+-Dorg.gradle.debug=true
+./gradlew -Dorg.gradle.debug.port=9003
+
+-Dorg.gradle.debug.port=9003
+
+
+-Dorg.gradle.debug=true
+
+
+#! prod
+SPRING_PROFILES_ACTIVE=core ./gradlew clean bootRun -Pprofile=prod
+#! dev
+SPRING_PROFILES_ACTIVE=core ./gradlew clean bootRun
+
+
+https://stackoverflow.com/questions/36923288/how-to-run-bootrun-with-spring-profile-via-gradle-task
+터미널에서 실행할 때는 이게 맞음!!!!!!!!!
+./gradlew bootRun --args='--spring.profiles.active=dev'
+
+
+./gradlew clean
+./gradlew build
+gradle build
+
+
+터미널 그레들로 실행하기
+./gradlew bootRun --args='--spring.profiles.active=dev'
+
+터미널 자바로 실행하기
+java -jar -Dserver.port=9004 ./build/libs/user_service-0.0.1-SNAPSHOT.jar
