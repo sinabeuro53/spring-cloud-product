@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
- * packageName  :   com.example.backend.core.main.controller
+ * packageName  :   com.example.springcloudproduct.core.main.controller
  * fileName     :   MainController
  * author       :   sinabeuro53
  * date         :   2022-03-24

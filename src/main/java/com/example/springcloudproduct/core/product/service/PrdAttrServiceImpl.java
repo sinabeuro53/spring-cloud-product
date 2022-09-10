@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * packageName  :   com.example.backend.core.product.service
+ * packageName  :   com.example.springcloudproduct.core.product.service
  * fileName     :   PrdAttrServiceImpl
  * author       :   sinabeuro53
  * date         :   2022-03-17

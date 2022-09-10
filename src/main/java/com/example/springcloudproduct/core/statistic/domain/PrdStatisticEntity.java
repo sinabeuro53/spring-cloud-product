@@ -9,7 +9,7 @@ import lombok.ToString;
 import javax.persistence.*;
 
 /**
- * packageName  :   com.example.backend.core.statistic.domain
+ * packageName  :   com.example.springcloudproduct.core.statistic.domain
  * fileName     :   PrdStatisticEntity
  * author       :   sinabeuro53
  * date         :   2022-03-22

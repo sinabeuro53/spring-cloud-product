@@ -3,7 +3,7 @@ package com.example.springcloudproduct.core.product.domain;
 import java.io.Serializable;
 
 /**
- * packageName  :   com.example.backend.core.product.domain
+ * packageName  :   com.example.springcloudproduct.core.product.domain
  * fileName     :   PrdAttrMapCompositeKey
  * author       :   sinabeuro53
  * date         :   2022-03-20

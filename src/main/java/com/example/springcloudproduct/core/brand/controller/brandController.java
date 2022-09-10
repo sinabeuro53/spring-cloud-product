@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * packageName  :   com.example.backend.core.brand.controller
+ * packageName  :   com.example.springcloudproduct.core.brand.controller
  * fileName     :   brandController
  * author       :   sinabeuro53
  * date         :   2022-03-16

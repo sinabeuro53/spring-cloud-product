@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * packageName  :   com.example.backend.core.common.domain
+ * packageName  :   com.example.springcloudproduct.core.common.domain
  * fileName     :   ResponseDTO
  * author       :   sinabeuro53
  * date         :   2022-03-17

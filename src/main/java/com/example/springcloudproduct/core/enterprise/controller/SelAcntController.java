@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * packageName  :   com.example.backend.core.enterprise.controller
+ * packageName  :   com.example.springcloudproduct.core.enterprise.controller
  * fileName     :   SelAcntController
  * author       :   sinabeuro53
  * date         :   2022-03-16

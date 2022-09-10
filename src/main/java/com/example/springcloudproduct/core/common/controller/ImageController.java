@@ -17,7 +17,7 @@ import java.nio.file.Path;
 import java.util.Objects;
 
 /**
- * packageName  :   com.example.backend.core.common
+ * packageName  :   com.example.springcloudproduct.core.common
  * fileName     :   ImageController
  * author       :   sinabeuro53
  * date         :   2022-03-21

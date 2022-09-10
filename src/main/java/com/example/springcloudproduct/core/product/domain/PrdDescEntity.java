@@ -9,7 +9,7 @@ import org.hibernate.annotations.Fetch;
 import javax.persistence.*;
 
 /**
- * packageName  :   com.example.backend.core.product.domain
+ * packageName  :   com.example.springcloudproduct.core.product.domain
  * fileName     :   PrdDescEntity
  * author       :   sinabeuro53
  * date         :   2022-03-17

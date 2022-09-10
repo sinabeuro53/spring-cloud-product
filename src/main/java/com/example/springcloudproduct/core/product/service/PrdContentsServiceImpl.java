@@ -20,7 +20,7 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 /**
- * packageName  :   com.example.backend.core.product.service
+ * packageName  :   com.example.springcloudproduct.core.product.service
  * fileName     :   PrdContentsServiceImpl
  * author       :   sinabeuro53
  * date         :   2022-03-17

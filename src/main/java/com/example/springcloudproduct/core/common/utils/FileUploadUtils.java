@@ -16,7 +16,7 @@ import java.util.Date;
 import java.util.Objects;
 
 /**
- * packageName  :   com.example.backend.core.common.utils
+ * packageName  :   com.example.springcloudproduct.core.common.utils
  * fileName     :   FileUploadUtils
  * author       :   sinabeuro53
  * date         :   2022-03-21

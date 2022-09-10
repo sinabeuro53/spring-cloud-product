@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * packageName  :   com.example.backend.core.delivery.controller
+ * packageName  :   com.example.springcloudproduct.core.delivery.controller
  * fileName     :   deliveryController
  * author       :   sinabeuro53
  * date         :   2022-03-16

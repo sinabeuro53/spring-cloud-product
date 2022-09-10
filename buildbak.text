@@ -45,7 +45,7 @@ jar {
 
 //springBoot {
 //    buildInfo()
-////    mainClass.set("com.example.backend.BackendApplicationApplication")
+////    mainClass.set("com.example.springcloudproduct.BackendApplicationApplication")
 //}
 
 
@@ -99,7 +99,7 @@ project(':'office_backend') {
     jar{
         enabled = true
         manifest {
-            attributes  'Title': 'office_backend', 'Version': 1.0, 'Main-Class': 'com.example.backend.BackendApplicationApplication'
+            attributes  'Title': 'office_backend', 'Version': 1.0, 'Main-Class': 'com.example.springcloudproduct.BackendApplicationApplication'
         }
         //archiveName 'SCMBackOffice.jar'
         //baseName = 'office_backend'

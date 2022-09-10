@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * packageName  :   com.example.backend.core.product.controller
+ * packageName  :   com.example.springcloudproduct.core.product.controller
  * fileName     :   PrdGroupController
  * author       :   sinabeuro53
  * date         :   2022-03-16

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * packageName  :   com.example.backend.core.enterprise.controller
+ * packageName  :   com.example.springcloudproduct.core.enterprise.controller
  * fileName     :   CodeController
  * author       :   sinabeuro53
  * date         :   2022-03-17

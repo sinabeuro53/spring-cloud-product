@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 /**
- * packageName  :   com.example.backend.core.option.repository
+ * packageName  :   com.example.springcloudproduct.core.option.repository
  * fileName     :   OptionValueRepository
  * author       :   sinabeuro53
  * date         :   2022-03-15

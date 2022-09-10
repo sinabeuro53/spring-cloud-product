@@ -5,7 +5,7 @@ import com.example.springcloudproduct.core.product.service.PrdDescService;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
- * packageName  :   com.example.backend.core.product.repository
+ * packageName  :   com.example.springcloudproduct.core.product.repository
  * fileName     :   PrdDescRepository
  * author       :   sinabeuro53
  * date         :   2022-03-17

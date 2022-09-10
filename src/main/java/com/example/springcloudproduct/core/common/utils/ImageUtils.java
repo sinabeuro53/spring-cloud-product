@@ -4,7 +4,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
 
 /**
- * packageName  :   com.example.backend.core.common.utils
+ * packageName  :   com.example.springcloudproduct.core.common.utils
  * fileName     :   ImageUtils
  * author       :   sinabeuro53
  * date         :   2022-03-21

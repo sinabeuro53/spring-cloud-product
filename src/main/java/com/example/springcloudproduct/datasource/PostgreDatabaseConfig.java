@@ -22,7 +22,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @PostgreConnMapper
-@MapperScan(basePackages = "com.example.backend.core", annotationClass = PostgreConnMapper.class, sqlSessionFactoryRef = "postgreSqlSessionFactory")
+@MapperScan(basePackages = "com.example.springcloudproduct.core", annotationClass = PostgreConnMapper.class, sqlSessionFactoryRef = "postgreSqlSessionFactory")
 @EnableTransactionManagement
 public class PostgreDatabaseConfig {
 

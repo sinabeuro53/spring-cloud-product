@@ -5,7 +5,7 @@ import com.example.springcloudproduct.core.product.domain.PrdAttrMapEntity;
 import java.util.List;
 
 /**
- * packageName  :   com.example.backend.core.product.service
+ * packageName  :   com.example.springcloudproduct.core.product.service
  * fileName     :   PrdAttrService
  * author       :   sinabeuro53
  * date         :   2022-03-17

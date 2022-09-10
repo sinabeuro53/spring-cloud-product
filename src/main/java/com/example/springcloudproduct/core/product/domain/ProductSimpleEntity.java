@@ -14,7 +14,7 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 /**
- * packageName  :   com.example.backend.core.product.domain
+ * packageName  :   com.example.springcloudproduct.core.product.domain
  * fileName     :   ProductSimpleEntity
  * author       :   sinabeuro53
  * date         :   2022-03-17

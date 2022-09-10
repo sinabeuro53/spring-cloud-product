@@ -5,7 +5,7 @@ import com.example.springcloudproduct.core.product.domain.ProductDetailDTO;
 import com.example.springcloudproduct.core.product.domain.ProductEntity;
 
 /**
- * packageName  :   com.example.backend.core.product.service
+ * packageName  :   com.example.springcloudproduct.core.product.service
  * fileName     :   PrdDetailContentsService
  * author       :   sinabeuro53
  * date         :   2022-03-17

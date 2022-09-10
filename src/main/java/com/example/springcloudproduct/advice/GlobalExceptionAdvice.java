@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * packageName  :   com.example.backend.advice
+ * packageName  :   com.example.springcloudproduct.advice
  * fileName     :   GlobalExceptionAdvice
  * author       :   sinabeuro53
  * date         :   2022-03-16

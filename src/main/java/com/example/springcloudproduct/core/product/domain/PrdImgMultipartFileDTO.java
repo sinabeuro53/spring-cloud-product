@@ -6,7 +6,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.List;
 
 /**
- * packageName  :   com.example.backend.core.product.domain
+ * packageName  :   com.example.springcloudproduct.core.product.domain
  * fileName     :   PrdImgMultipartFileDTO
  * author       :   sinabeuro53
  * date         :   2022-03-20

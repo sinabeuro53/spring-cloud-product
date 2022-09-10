@@ -8,7 +8,7 @@ import org.hibernate.annotations.DynamicUpdate;
 import javax.persistence.*;
 
 /**
- * packageName  :   com.example.backend.core.product.domain
+ * packageName  :   com.example.springcloudproduct.core.product.domain
  * fileName     :   PrdImgEntity
  * author       :   sinabeuro53
  * date         :   2022-03-17

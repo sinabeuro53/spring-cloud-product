@@ -16,7 +16,7 @@ import static java.util.stream.Collectors.groupingBy;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * packageName  :   com.example.backend.core.product.service
+ * packageName  :   com.example.springcloudproduct.core.product.service
  * fileName     :   PrdAttrServiceImplTest
  * author       :   sinabeuro53
  * date         :   2022-03-17

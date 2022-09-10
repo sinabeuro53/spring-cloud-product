@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * packageName  :   com.example.backend.core.statistic.controller
+ * packageName  :   com.example.springcloudproduct.core.statistic.controller
  * fileName     :   StatisticController
  * author       :   sinabeuro53
  * date         :   2022-03-22
